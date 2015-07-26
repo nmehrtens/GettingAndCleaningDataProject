@@ -11,8 +11,11 @@ README.md  - this file.
 
 run_analysis.R  - the script file required to run the analysis outlined below.
 
-CodeBook.MD  - a code book describing the raw data products, and how they are transformed into a tidy data set that meet the requirements of the project description (outlined below). 
+CodeBook.MD  - a code book describing the raw data products, and how they are transformed into a tidy data set that meet the requirements of the project description (outlined below).
 
+CodeBook.html - an html file of the code book.
+
+tidy.txt - a copy of the tidy data set outputted by the analysis script.
 
 # Project description
 
