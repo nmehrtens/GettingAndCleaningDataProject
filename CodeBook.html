@@ -111,6 +111,10 @@ download.file(url, destfile = destfile, method = &quot;curl&quot;)</code></pre>
 </ul>
 <p>The subjectID in the subject_train.txt and subject_test.txt identifies a participant taking part in the experiment. There are 30 participants, taking part in 6 activities. These activities are listed in “activity_labels.txt” along with its corresponding ID number. The y_train.txt and y_test.txt files identifies the activity being carried out by the participant for each record.</p>
 <p>Whilst performing an activity the following measurements are taken:</p>
+<pre class="r"><code>featureLabels &lt;- read.table(&quot;UCI HAR Dataset/features.txt&quot;,
+                            header=FALSE, col.names=c(&quot;featureID&quot;,&quot;featureName&quot;))
+
+featureLabels[,2]</code></pre>
 <pre><code>##   [1] tBodyAcc-mean()-X                   
 ##   [2] tBodyAcc-mean()-Y                   
 ##   [3] tBodyAcc-mean()-Z                   
@@ -773,8 +777,11 @@ summarizedData &lt;- ddply(trimmedData,.(activity,subjectID),numcolwise(mean,na.
 </div>
 <div id="the-tidy-data" class="section level1">
 <h1>The tidy data</h1>
+<pre class="r"><code>dim(summarizedData)</code></pre>
+<pre><code>## [1] 180  88</code></pre>
 <p>The output from Step 5 comprises the final tidy data set. It is a 180 column by 88 row table. It contains the average value of each variable (those containing only mean and standard deviation measurements in the UCI HAR Dataset), grouped by activity and subject.</p>
 <p>The variables in the tidy data are as follows:</p>
+<pre class="r"><code>names(summarizedData)</code></pre>
 <pre><code>##  [1] &quot;activity&quot;                                  
 ##  [2] &quot;subjectID&quot;                                 
 ##  [3] &quot;tBodyaccelerometermeanX&quot;                   

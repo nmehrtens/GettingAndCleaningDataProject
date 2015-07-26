@@ -73,7 +73,7 @@ The subjectID in the subject_train.txt and subject_test.txt identifies a partici
 The y_train.txt and y_test.txt files identifies the activity being carried out by the participant for each record. 
 
 Whilst performing an activity the following measurements are taken:
-```{r echo=FALSE}
+```{r}
 featureLabels <- read.table("UCI HAR Dataset/features.txt",
                             header=FALSE, col.names=c("featureID","featureName"))
 
@@ -128,7 +128,7 @@ subjectTrain <- read.table("UCI HAR Dataset/train/subject_train.txt", header=FAL
 
 Executed this step by utilising the package plyr and the 'join' command. These commands cross-matches and assigns the descriptive labels for the activities (e.g. "WALKING") to the activity ID in the test (1st command) and training (2nd command) set.
 
-```{r results="hide"}
+```{r}
 
 # Assign activity description to the corresponding activity label for the test and training sets
 # joins on activityID
@@ -218,14 +218,14 @@ summarizedData <- ddply(trimmedData,.(activity,subjectID),numcolwise(mean,na.rm=
 
 # The tidy data
 
-```{r echo=FALSE, results="hide"}
+```{r}
 dim(summarizedData)
 ```
 
 The output from Step 5 comprises the final tidy data set. It is a `r dim(summarizedData)[1]` column by `r dim(summarizedData)[2]` row table. It contains the average value of each variable (those containing only mean and standard deviation measurements in the UCI HAR Dataset), grouped by activity and subject.  
 
 The variables in the tidy data are as follows:
-```{r echo=FALSE}
+```{r}
 names(summarizedData)
 ```
 
