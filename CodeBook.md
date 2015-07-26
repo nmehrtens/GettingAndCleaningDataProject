@@ -793,7 +793,7 @@ summarizedData <- ddply(trimmedData,.(activity,subjectID),numcolwise(mean,na.rm=
 
 
 
-The output from Step 5 comprises the final tidy data set. It is a 180 column by 88 row table. It contains the average value of each variable (those containing only mean and standard deviation measurements in the UCI HAR Dataset), grouped by activity and subject.  
+The output from Step 5 comprises the final tidy data set. It is a 180 row by 88 column table. It contains the average value of each variable (those containing only mean and standard deviation measurements in the UCI HAR Dataset), grouped by activity and subject.  
 
 The variables in the tidy data are as follows:
 
@@ -889,7 +889,7 @@ The variables in the tidy data are as follows:
 ```
 
 # Output file
-The output file from the run_analysis.R script is the resulting tidy data set (from step 5) written to a tab separated text file. It is a 180 column by 88 row table. It contains the average value of each variable (those containing only mean and standard deviation measurements in the UCI HAR Dataset), grouped by activity and subject.  
+The output file from the run_analysis.R script is the resulting tidy data set (from step 5) written to a tab separated text file. It is a 180 row by 88 column table. A header is included. It contains the average value of each variable (those containing only mean and standard deviation measurements in the UCI HAR Dataset), grouped by activity and subject.  
 
 This file is outputted to the working directory. 
 
